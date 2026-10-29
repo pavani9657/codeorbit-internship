@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple to-do list with browser storage.">
+  <title>Focus List | To-Do App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+
+    <header class="topline">
+  <div class="brand">
+    <span class="brand-mark">✓</span>
+    <span>FOCUS LIST</span>
+  </div>
+
+  <section class="date-section" aria-label="Today's date">
+    <div class="date-card">
+      <div class="date-month" id="dateMonth">OCT</div>
+      <div class="date-number" id="dateNumber">29</div>
+      <div class="date-day" id="dateDay">THURSDAY</div>
+    </div>
+  </section>
+</header>
+
+    <section class="intro">
+      <p class="eyebrow">MAKE SPACE FOR WHAT MATTERS</p>
+      <h1>Your day,<br><span>one task at a time.</span></h1>
+      <p class="subheading">
+        A simple list to plan, track, and finish your tasks.
+      </p>
+    </section>
+
+    <section class="task-panel" aria-label="Task manager">
+
+      <form id="taskForm" class="task-form">
+        <label class="sr-only" for="taskInput">New task</label>
+        <input
+          id="taskInput"
+          maxlength="180"
+          placeholder="What do you need to do?"
+          autocomplete="off"
+          required
+        >
+        <button type="submit" id="submitButton">
+          Add task <span>＋</span>
+        </button>
+      </form>
+
+      <p id="formMessage" class="form-message" aria-live="polite"></p>
+
+      <div class="toolbar">
+        <div class="filters" role="group" aria-label="Filter tasks">
+          <button class="filter active" data-filter="all">
+            All <span id="allCount">0</span>
+          </button>
+          <button class="filter" data-filter="active">
+            Active <span id="activeCount">0</span>
+          </button>
+          <button class="filter" data-filter="completed">
+            Done <span id="completedCount">0</span>
+          </button>
+        </div>
+
+        <button id="clearCompleted" class="clear-button" type="button">
+          Clear completed
+        </button>
+      </div>
+
+      <ul id="taskList" class="task-list" aria-live="polite"></ul>
+
+      <div id="emptyState" class="empty-state">
+        <div class="empty-icon">✦</div>
+        <h2>Nothing on your list yet</h2>
+        <p>Add a task above and get started.</p>
+      </div>
+
+      <footer class="panel-footer">
+        <span id="remainingText">0 tasks remaining</span>
+        <span><span class="save-dot"></span> Saved on this device</span>
+      </footer>
+
+    </section>
+
+    <p class="page-note">
+      Your tasks are stored in this browser using localStorage.
+    </p>
+
+  </main>
+
+  <dialog id="editDialog" class="edit-dialog">
+    <form method="dialog" id="editForm">
+      <h2>Edit task</h2>
+      <label for="editInput">Task description</label>
+      <input id="editInput" maxlength="180" required>
+
+      <div class="dialog-actions">
+        <button type="button" class="cancel-button" id="cancelEdit">
+          Cancel
+        </button>
+        <button type="submit" class="save-button">
+          Save changes
+        </button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+
+  <!-- Automatically display the current date -->
+  <script>
+    function updateCalendarDate() {
+      const today = new Date();
+
+      document.getElementById("dateMonth").textContent =
+        today.toLocaleDateString("en-US", {
+          month: "short"
+        }).toUpperCase();
+
+      document.getElementById("dateNumber").textContent =
+        today.getDate();
+
+      document.getElementById("dateDay").textContent =
+        today.toLocaleDateString("en-US", {
+          weekday: "long"
+        }).toUpperCase();
+    }
+
+    updateCalendarDate();
+  </script>
+
+</body>
+</html>

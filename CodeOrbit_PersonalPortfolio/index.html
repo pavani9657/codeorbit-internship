@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal portfolio showcasing web development skills and projects.">
+  <title>My Portfolio | Web Developer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home">Portfolio<span>.</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav id="navigation" aria-label="Main navigation">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">HELLO, I'M</p>
+        <h1>Pavani <span>—An Aspiring Web Developer</span></h1>
+        <p class="lead">I build simple, useful web experiences using HTML, CSS and JavaScript. I enjoy learning by turning ideas into working projects.</p>
+        <div class="hero-actions"><a class="button primary" href="#projects">Explore my work</a><a class="button secondary" href="#contact">Contact me</a></div>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="code-card"><span>const</span> developer = {<br>&nbsp; curious: <b>true</b>,<br>&nbsp; learning: <b>"every day"</b><br>};<br><i> // building one project at a time</i></div></div>
+    </section>
+
+    <section class="section" id="about">
+      <p class="eyebrow">A LITTLE ABOUT ME</p><h2>Learning by <span>building.</span></h2>
+      <div class="about-panel"><p>I am a student developing my skills in front-end and full-stack web development. I like creating clean interfaces, working with APIs, and solving practical problems through code. This portfolio presents my learning journey and selected projects.</p><p><strong>Current focus:</strong> JavaScript, responsive design, APIs, and writing maintainable code.</p></div>
+    </section>
+
+    <section class="section" id="skills">
+      <p class="eyebrow">WHAT I USE</p><h2>Skills &amp; tools</h2>
+      <div class="skill-grid">
+        <article class="skill"><span>01</span><h3>HTML5</h3><p>Semantic page structure and accessible content.</p></article>
+        <article class="skill"><span>02</span><h3>CSS3</h3><p>Responsive layouts, styling, and visual polish.</p></article>
+        <article class="skill"><span>03</span><h3>JavaScript</h3><p>DOM interactions, events, and application logic.</p></article>
+        <article class="skill"><span>04</span><h3>Web APIs</h3><p>Fetching data asynchronously and handling JSON.</p></article>
+        <article class="skill"><span>05</span><h3>localStorage</h3><p>Persisting useful app data in the browser.</p></article>
+        <article class="skill"><span>06</span><h3>Git &amp; GitHub</h3><p>Version control and sharing project work.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <p class="eyebrow">SELECTED WORK</p><h2>Projects I've built</h2>
+      <div class="project-grid">
+        <article class="project-card"><div class="project-icon">🎬</div><p class="tag">HTML · CSS · JavaScript · OMDb API</p><h3>Movie Search App</h3><p>Search movies and view ratings, genre, cast, language, country, and plot. Includes favorites saved in localStorage and a demo account flow.</p><span class="project-note">Personal project</span></article>
+        <article class="project-card"><div class="project-icon">✓</div><p class="tag">HTML · CSS · JavaScript</p><h3>To-Do List Web App</h3><p>A simple task manager to add, edit, complete, delete, and filter tasks, with browser storage so tasks remain after refresh.</p><span class="project-note">CodeOrbit internship task</span></article>
+        <article class="project-card"><div class="project-icon">⌘</div><p class="tag">HTML · CSS · JavaScript</p><h3>Personal Portfolio</h3><p>A responsive portfolio introducing my skills, learning goals, and selected web projects.</p><span class="project-note">CodeOrbit internship task</span></article>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <p class="eyebrow">LET'S CONNECT</p><h2>Get in touch.</h2>
+      <p>I'm interested in learning opportunities, collaboration, and feedback on my projects.</p>
+      <a class="button primary" href="mailto:pavanighantasala9@gmail.com">pavanighantasala9@gmail.com</a>
+    </section>
+  </main>
+  <footer><span>© <span id="year"></span> Pavani</span><a href="#home">Back to top ↑</a></footer>
+  <script src="script.js"></script>
+</body>
+</html>
